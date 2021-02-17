@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/mchehab/upload_on_trigger/issues"
   },
-  "homepage": "https://github.com/mchehab/upload_on_trigger#readme"
+  "homepage": "https://github.com/mchehab/upload_on_trigger#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/exec": "^1.0.4",
+    "@actions/github": "^4.0.0"
+  }
 }
