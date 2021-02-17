@@ -24,4 +24,9 @@
     "url": "https://github.com/mchehab/upload-on-trigger/issues"
   },
   "homepage": "https://github.com/mchehab/upload-on-trigger",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/exec": "^1.0.4",
+    "@actions/github": "^4.0.0"
+  }
 }
