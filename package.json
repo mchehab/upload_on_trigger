@@ -1,0 +1,22 @@
+{
+  "name": "upload_on_trigger",
+  "version": "1.0.0",
+  "description": "Uploads files to release when triggered",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint 'src/**.js' 'tests/**.js' && jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mchehab/upload_on_trigger.git"
+  },
+  "keywords": [
+    "actions"
+  ],
+  "author": "Mauro Carvalho Chehab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mchehab/upload_on_trigger/issues"
+  },
+  "homepage": "https://github.com/mchehab/upload_on_trigger#readme"
+}
