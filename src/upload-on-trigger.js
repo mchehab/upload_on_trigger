@@ -8,7 +8,30 @@ async function run() {
     const github = new GitHub(process.env.GITHUB_TOKEN);
 
     // Get the inputs from the workflow file: https://github.com/actions/toolkit/tree/master/packages/core#inputsoutputs
-    const uploadUrl = core.getInput('upload_url', { required: true });
+
+    var uploadUrl = core.getInput('upload_url', { required: false, default: ''});
+
+    // Useful when manually triggered
+    if (uploadUrl === '') {
+        var release;
+
+        const rel = core.getInput('release', { required: false, default: '' });
+
+        if (rel === '') {
+            release = github.repos.getLatestRelease({
+                owner: github.context.repo.owner,
+                repo: github.context.repo.repo,
+            });
+        } else {
+            release = github.repos.getRelease({
+                owner: github.context.repo.owner,
+                repo: github.context.repo.repo,
+                release: rel,
+            });
+        }
+        uploadUrl = release.data.upload_url;
+    }
+
     const assetPath = core.getInput('asset_path', { required: true });
     const assetName = core.getInput('asset_name', { required: true });
     const assetContentType = core.getInput('asset_content_type', { required: true });
